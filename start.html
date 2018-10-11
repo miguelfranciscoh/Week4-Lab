@@ -36,8 +36,8 @@ body {
 <script src="https://d3js.org/d3.v3.min.js"></script>
 
 <script>
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 50, bottom: 30, left: 40},
+    width = 1000 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 /*
@@ -60,7 +60,7 @@ var yValue = function(d) { return d["TOTALEXP"];}, // data -> value
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // setup fill color
-var cValue = function(d) { return d.Manufacturer;},
+var cValue = function(d) { return d.DISTRICT;},
     color = d3.scale.category10();
 
 // add the graph canvas to the body of the webpage
@@ -68,7 +68,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top +")");
 
 // add the tooltip area to the webpage
 var tooltip = d3.select("body").append("div")
